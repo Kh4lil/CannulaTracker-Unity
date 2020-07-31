@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 130.95044, g: 162.22789, b: 214.71748, a: 1}
+  m_IndirectSpecularColor: {r: 130.93462, g: 162.28125, b: 214.87488, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6cfe423139c361a459da7ed9831d4b1c, type: 2}
+    - target: {fileID: -3892131741629856084, guid: 0e4bf891a24fc45449a75c8a0de710c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.813
+      objectReference: {fileID: 0}
     - target: {fileID: -3190255674749778572, guid: 0e4bf891a24fc45449a75c8a0de710c9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -218,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 4263247626928190575, guid: 0e4bf891a24fc45449a75c8a0de710c9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752594258460103986, guid: 0e4bf891a24fc45449a75c8a0de710c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8256601980752627654, guid: 0e4bf891a24fc45449a75c8a0de710c9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -237,7 +245,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106262759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac87d336561fe476b82c792691323d35, type: 3}
   m_Name: 
@@ -335,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d187fbc8bf84651882487087be69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knotPusher: {fileID: 106262759}
   portName: /dev/cu.usbmodem1411
   baudRate: 115200
   ControlObject: {fileID: 0}
@@ -496,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portName: /dev/cu.usbmodem1411
-  baudRate: 115200
+  baudRate: 38400
 --- !u!4 &1078225750
 Transform:
   m_ObjectHideFlags: 0

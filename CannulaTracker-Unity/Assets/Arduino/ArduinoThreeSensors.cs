@@ -9,6 +9,10 @@ using UnityEngine;
 public class ArduinoThreeSensors : MonoBehaviour
 {
 
+    public GameObject knotPusher;
+    private float m_Speed; //Sets the speed.
+    private float position = 0.0f;
+
     //Device 
     [Tooltip("SerialPort that the device is using (Example: COM4)")]
     public string portName = "COM3";
@@ -31,15 +35,52 @@ public class ArduinoThreeSensors : MonoBehaviour
         stream.Open();
         stream.ReadTimeout = 1;
 
+        m_Speed = 2.0f; //Set the speed of the GameObject
+
     }
 
     void ReadSerial()
     {
+
+        float lastVal = position;
         string dataString = stream.ReadLine();
         //var dataBlocks = dataString.Split(',');
 
+        float.TryParse(dataString, out position);
 
-        Debug.Log("SENSOR 1 DATA: " + dataString);
+        //Debug.Log("SENSOR 1 DATA: " + dataString);
+        //Debug.Log("SENSOR 1 DATA: " + position);
+        if (lastVal != position)
+        {
+            if (lastVal < position)
+            {
+                knotPusher.transform.position += transform.right * Time.deltaTime * m_Speed;
+            }
+            if (lastVal > position)
+            {
+                knotPusher.transform.position += -transform.right * Time.deltaTime * m_Speed;
+            }
+            //Debug.Log("LAST VAL: " + lastVal + "POSITION: " + position);
+        }
+
+        //knotPusher.transform.position += transform.right * Time.deltaTime * m_Speed;
+        //if (this.transform.localPosition.x <= 0.0f)
+        //{
+        //Rotate our Tank about the Y axis in the positive direction
+        //  knotPusher.transform.position += transform.right * Time.deltaTime * position;
+        //}
+
+
+        /*
+                while (position <= 410.0f)
+                {
+                    if (knotPusher.transform.localPosition.x <= -0.8f)
+                    {
+                        //Rotate our Tank about the Y axis in the positive direction
+                        knotPusher.transform.position += transform.right * Time.deltaTime * m_Speed;
+                    }
+                }
+        */
     }
 
 
