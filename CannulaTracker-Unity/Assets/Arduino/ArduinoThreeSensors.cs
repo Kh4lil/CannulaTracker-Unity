@@ -49,7 +49,7 @@ public class ArduinoThreeSensors : MonoBehaviour
         float.TryParse(dataString, out position);
 
         //Debug.Log("SENSOR 1 DATA: " + dataString);
-        //Debug.Log("SENSOR 1 DATA: " + position);
+        Debug.Log("SENSOR 1 DATA: " + position);
         if (lastVal != position)
         {
             if (lastVal < position)
